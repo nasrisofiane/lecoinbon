@@ -1,0 +1,16 @@
+
+textarea{
+	resize:none
+}
+form{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+.error{
+	color:red;
+	font-size:0.8em;
+	text-align:center;
+}
