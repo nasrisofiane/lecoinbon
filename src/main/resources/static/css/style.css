@@ -14,3 +14,12 @@ form{
 	font-size:0.8em;
 	text-align:center;
 }
+
+nav ul{
+	list-style-type:none;
+	background:blue;
+	height:100px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-around;
+}
