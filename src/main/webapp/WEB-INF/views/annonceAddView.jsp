@@ -3,23 +3,11 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="./style.css" />
-<title>Insert title here</title>
-<style>
-	textarea{
-		resize:none
-	}
-	form{
-		display:flex;
-		flex-direction:column;
-		justify-content:center;
-		align-items:center;
-	}
-</style>
-</head>
+<%@include file="head.jsp" %>
 <body>
+	
+	<%@include file="header.jsp" %>
+	<h2>Add annonce</h2>
 	<div>
 	<form:form method="POST" action="http://localhost:8080/addAnnonce" modelAttribute="annonce">
 		<fieldset>
@@ -36,6 +24,6 @@
 		<input type="submit" value="ajouter l'annonce">
 	</form:form>
 	</div>
-
+	<%@include file="footer.jsp" %>
 </body>
 </html>

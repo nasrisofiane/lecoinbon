@@ -20,8 +20,7 @@ create table annonces (
 	id serial PRIMARY KEY, 
 	titre VARCHAR NOT NULL,
 	description VARCHAR NOT NULL, 
-	owner_id INT default null REFERENCES users,
-	created timestamp default NOW()
+	owner_id INT default null REFERENCES users
 ) ;
 
 create table categories ( 

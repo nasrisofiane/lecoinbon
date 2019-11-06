@@ -1,4 +1,7 @@
-
+body, html{
+	padding:0px;
+	margin:0px;
+}
 textarea{
 	resize:none
 }
@@ -17,9 +20,102 @@ form{
 
 nav ul{
 	list-style-type:none;
-	background:blue;
+	padding: 0px;
+	margin: 0px;
+	background:lightgray;
 	height:100px;
 	display:flex;
 	flex-direction:row;
 	justify-content:space-around;
+}
+
+
+nav ul li{
+	border:solid 1px;
+	background: #0000ff62;
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+
+nav ul li:hover{
+	background: #0000ff9a;
+}
+
+a{
+	text-decoration:none;
+	color:black;	
+}
+
+footer{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	border:solid;
+	display: flex;
+	justify-content: space-around
+}
+
+header h1{
+	text-align:center;
+}
+
+.all-annonces{
+	width:60%;
+	margin:auto;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+.one-annonce{
+	position:relative;
+	margin:5px 0px 5px 0px;
+	border:solid green 1px;
+	width:80%;
+}
+
+.one-annonce p{
+	text-align:center;
+}
+
+.one-annonce date{
+	position:absolute;
+	bottom:0px;
+	right:5px;
+}
+
+.pagination{
+	position:absolute;
+	border:solid black 1px;
+	display:flex;
+	justify-content:space-between;
+	list-style-type:none;
+	padding: 0px;
+	margin: 0px;
+	bottom:100px;
+}
+
+.pagination li a{
+	text-decoration:underline;
+	margin:3px 3px 3px 3px;
+	font-size:1.5em;
+	
+}
+.pagination li{
+	text-decoration:underline;
+	margin:3px 3px 3px 3px;
+	font-size:1.5em;
+}
+
+.pagination li a:hover{
+	text-decoration:none;
+	margin:3px 3px 3px 3px;
+	
+}
+
+.keyword{
+	color:red;
 }

@@ -1,5 +1,6 @@
 package lecoinbon.main;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
@@ -21,6 +22,15 @@ public class Annonce {
 	private String titre;
 	@NotBlank(message = "Please enter a Description")
 	private String description;
+	
+	private LocalDate created = LocalDate.now();
+	
+	public LocalDate getCreated() {
+		return created;
+	}
+	public void setCreated(LocalDate created) {
+		this.created = created;
+	}
 	@Transient
 	private ArrayList<String> categories;
 	
