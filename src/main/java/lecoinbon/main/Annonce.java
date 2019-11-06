@@ -25,6 +25,14 @@ public class Annonce {
 	
 	private LocalDate created = LocalDate.now();
 	
+	private boolean activated = false;
+	
+	public boolean isActivated() {
+		return activated;
+	}
+	public void setActivated(boolean activated) {
+		this.activated = activated;
+	}
 	public LocalDate getCreated() {
 		return created;
 	}

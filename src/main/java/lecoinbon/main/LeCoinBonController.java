@@ -87,6 +87,25 @@ public class LeCoinBonController {
 		return mav;
 	}
 	
-	
-	
+	@RequestMapping(value = "/moderation", method = RequestMethod.GET) //lance Home au lancement de la page web.
+	public String moderation(Model m/* Donne des infos au JSP */,@RequestParam(required = false) List<Integer> annonceToActivate, @RequestParam(required = false) String page ){
+		int nbPages = (int)Math.ceil(leCoinBonService.findAllByActivated().size()/2 );
+		if(page == null) {
+			page = "0";
+		}
+		if(leCoinBonService.findAllByActivated(nbPages).size() < 1) {
+			nbPages -= 1;
+		}
+		List<Annonce> annonce = leCoinBonService.findAllByActivated(Integer.parseInt(page));
+		m.addAttribute("annonces", annonce);
+		m.addAttribute("nbpages", nbPages);
+		List<Integer> arrayAnnonceToActivate = new ArrayList<>();
+		if(annonceToActivate != null) {
+			arrayAnnonceToActivate = annonceToActivate;
+			leCoinBonService.arrayAnnonceToActivate(arrayAnnonceToActivate);
+			return "redirect:/moderation?page=0";
+		}
+		System.out.println(arrayAnnonceToActivate.toString());
+		return "moderation";
+	}
 }

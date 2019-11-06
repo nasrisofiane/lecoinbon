@@ -45,4 +45,22 @@ public class LeCoinBonService {
 	public List<Annonce> findAllByKeywordInTitle(String keyword){
 		return annonceRepo.findAllAnnoncesWithPaginationByKeywordInTitle(keyword);
 	}
+	
+	public List<Annonce> findAllByActivated(int page){
+		int nbMaxPerPage = 2 * page;
+		return annonceRepo.findAllByActivated(2,nbMaxPerPage);
+	}
+	
+	public void arrayAnnonceToActivate(List<Integer> annonces) {
+		for(int i = 0; i < annonces.size(); i++) {
+			Annonce annonceToEdit = annonceRepo.getOne(annonces.get(i));
+			annonceToEdit.setActivated(true);
+			annonceRepo.save(annonceToEdit);
+		}
+	}
+	
+	public List<Annonce> findAllByActivated(){
+		return annonceRepo.findAllByActivated();
+	}
+	
 }
